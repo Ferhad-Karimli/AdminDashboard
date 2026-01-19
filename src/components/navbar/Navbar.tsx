@@ -34,6 +34,18 @@ export default function Navbar() {
       link: '/messages',
       name: 'Mesajlar',
     },
+      {
+      link: '/services',
+      name: 'Xidmətlər',
+    },
+       {
+      link: '/certificate',
+      name: 'Sertifikatlar',
+    },
+           {
+      link: '/portfolio',
+      name: 'Portfolio',
+    },
     {
       link: '/settings',
       name: 'Ayarlar',

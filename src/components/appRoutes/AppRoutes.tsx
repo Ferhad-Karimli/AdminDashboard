@@ -10,6 +10,9 @@ import Messages from '../../pages/messages/Messages';
 import Dashboard from '../../pages/dashboard/Dashboard';
 import Login from '../../pages/login/Login';
 import { ProtectedRoute } from '../protectedRouter/ProtectedRouter';
+import CertificateAdmin from '../../pages/certificate/Certificate';
+import Portfolio from '../../pages/portfolio/Portfolio';
+import ServicesAdmin from '../../pages/services/Services';
 
 export default function AppRoutes() {
   return (
@@ -29,6 +32,9 @@ export default function AppRoutes() {
               <Route path="/settings" element={<Settings />} />
               <Route path="/messages" element={<Messages />} />
               <Route path="/dashboard" element={<Dashboard />} />
+               <Route path="/certificate" element={<CertificateAdmin />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                 <Route path="/services" element={<ServicesAdmin />} />
             </Route>
           </Routes>
         </main>
