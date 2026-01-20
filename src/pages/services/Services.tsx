@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Container,
   Typography,
@@ -40,7 +40,7 @@ export default function ServicesAdmin() {
   const [form, setForm] = useState({ title: '', description: '', iconUrl: '', iconFile: null });
   const [editId, setEditId] = useState(null);
   const [open, setOpen] = useState(false);
-  const [iconPreview, setIconPreview] = useState(null);
+  const [iconPreview, setIconPreview] = useState<any>(null);
 
   // Fayl seçiləndə preview yarat
   useEffect(() => {
@@ -54,11 +54,11 @@ export default function ServicesAdmin() {
     }
   }, [form.iconFile]);
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e:any) => {
     if (e.target.files && e.target.files.length > 0) {
       setForm({ ...form, iconFile: e.target.files[0], iconUrl: '' });
     }
@@ -98,7 +98,7 @@ export default function ServicesAdmin() {
     setOpen(true);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = (id:any) => {
     setServices((prev) => prev.filter((s) => s.id !== id));
   };
 

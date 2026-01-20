@@ -13,8 +13,8 @@ import Typography from '@mui/material/Typography';
 import styles from './index.module.css';
 export default function Categories() {
   const [age, setAge] = React.useState('');
-  const [image, setImage] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
+  const [ setImage] = useState<any>(null);
+  const [ setPreview] = useState<any>(null);
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
   };

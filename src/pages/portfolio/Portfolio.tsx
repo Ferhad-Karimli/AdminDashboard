@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import {
   Container,
   Typography,
   TextField,
   Button,
   Paper,
-  Grid,
   Table,
   TableBody,
   TableCell,
@@ -42,7 +41,7 @@ export default function PortfolioAdmin() {
   const [open, setOpen] = useState(false);
 
   // Form dəyişiklikləri
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -71,14 +70,14 @@ export default function PortfolioAdmin() {
   };
 
   // Redaktə pəncərəsini aç
-  const handleEdit = (company) => {
+  const handleEdit = (company:any) => {
     setForm({ name: company.name, logo: company.logo, website: company.website });
     setEditId(company.id);
     setOpen(true);
   };
 
   // Şirkəti sil
-  const handleDelete = (id) => {
+  const handleDelete = (id:any) => {
     setCompanies((prev) => prev.filter((c) => c.id !== id));
   };
 

@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import {useState} from 'react';
 import {
   Container,
   Typography,
@@ -15,7 +15,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 export default function FormMessages() {
   
 
-  const handleDelete = (id) => {
+  const handleDelete = (id:any) => {
     setMessages((prev) => prev.filter((msg) => msg.id !== id));
   };
 

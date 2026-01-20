@@ -7,9 +7,7 @@ type ModalProps = {
 };
 export default function Modal({ setShowModal }: ModalProps) {
   
- 
-  
-  
+   
   
   
     return (

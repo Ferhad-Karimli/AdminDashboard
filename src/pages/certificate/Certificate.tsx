@@ -10,8 +10,6 @@ import {
   ListItem,
   ListItemText,
   Divider,
-  Box,
-  IconButton,
   Link,
 } from '@mui/material';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
@@ -19,10 +17,10 @@ import UploadFileIcon from '@mui/icons-material/UploadFile';
 export default function CertificateUploader() {
   const [name, setName] = useState('');
   const [course, setCourse] = useState('');
-  const [file, setFile] = useState(null);
-  const [certs, setCerts] = useState([]);
+  const [file, setFile] = useState<any>(null);
+  const [certs, setCerts] = useState<any>([]);
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e:any) => {
     if (e.target.files.length > 0) {
       setFile(e.target.files[0]);
     }
@@ -39,7 +37,7 @@ export default function CertificateUploader() {
         id: Date.now(),
         name: name.trim(),
         course: course.trim(),
-        fileName: file.name,
+        fileName: file?.name,
         fileUrl,
         date: new Date().toLocaleDateString(),
       },
@@ -52,7 +50,11 @@ export default function CertificateUploader() {
     setFile(null);
 
     // Reset file input value (hack)
-    document.getElementById('file-input').value = null;
+  const input = document.getElementById('file-input') as HTMLInputElement | null;
+
+if (input) {
+  input.value = '';
+}
   };
 
   return (
@@ -63,7 +65,7 @@ export default function CertificateUploader() {
 
       <Grid container spacing={4}>
         {/* Form */}
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Paper elevation={3} sx={{ p: 3 }}>
             <Typography variant="h6" gutterBottom>
               Add Existing Certificate
@@ -118,7 +120,7 @@ export default function CertificateUploader() {
         </Grid>
 
         {/* Certificates list */}
-        <Grid item xs={12} md={8}>
+        <Grid size ={{xs:12, md:4}}>
           <Paper elevation={3} sx={{ p: 3, maxHeight: '70vh', overflowY: 'auto' }}>
             <Typography variant="h6" gutterBottom>
               Uploaded Certificates
@@ -129,7 +131,7 @@ export default function CertificateUploader() {
               </Typography>
             ) : (
               <List>
-                {certs.map(({ id, name, course, fileName, fileUrl, date }) => (
+                {certs.map(({ id, name, course, fileName, fileUrl, date }:any) => (
                   <React.Fragment key={id}>
                     <ListItem
                       secondaryAction={

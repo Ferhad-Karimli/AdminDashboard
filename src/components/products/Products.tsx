@@ -8,14 +8,12 @@ import {
   TableRow,
   Paper,
   Button,
-  IconButton,
+
 } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import Modal from "../modal/Modal";
 
 export default function ProductTable() {
-const [showModal,setShowModal]= React.useState()
+const [showModal,setShowModal]= React.useState<any>()
         const products = [
     {
       price: '15',

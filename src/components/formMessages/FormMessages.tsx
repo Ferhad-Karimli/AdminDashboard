@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Container,
   Typography,
@@ -10,7 +9,7 @@ import {
   TableBody,
 } from '@mui/material';
 
-export default function FormMessages({ messages }) {
+export default function FormMessages({ messages }:any) {
   return (
     <Container maxWidth="md" sx={{ py: 4 }}>
       <Typography variant="h4" gutterBottom>
@@ -29,7 +28,7 @@ export default function FormMessages({ messages }) {
           </TableHead>
           <TableBody>
             {messages && messages.length > 0 ? (
-              messages.map(({ id, name, email, message, date }) => (
+              messages.map(({ id, name, email, message, date }:any) => (
                 <TableRow key={id}>
                   <TableCell>{name}</TableCell>
                   <TableCell>{email}</TableCell>
